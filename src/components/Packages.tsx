@@ -2,8 +2,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Packages = () => {
+  const headerRef = useRef(null);
+  const headerInView = useInView(headerRef, { once: true });
+
   const packages = [
     {
       name: "Wedding Package",
@@ -56,70 +62,112 @@ const Packages = () => {
   return (
     <div className="min-h-screen py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <motion.div 
+          ref={headerRef}
+          initial={{ y: 50, opacity: 0 }}
+          animate={headerInView ? { y: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Packages</h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Choose from our carefully curated packages or let us create a custom solution for your event
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {packages.map((pkg, index) => (
-            <Card 
-              key={index} 
-              className={`relative hover:shadow-xl transition-shadow ${
-                pkg.popular ? 'border-primary border-2' : ''
-              }`}
+            <motion.div
+              key={index}
+              initial={{ y: 50, opacity: 0, scale: 0.9 }}
+              whileInView={{ y: 0, opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
             >
-              {pkg.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
-                  Most Popular
-                </div>
-              )}
-              
-              <CardHeader className="text-center pb-4">
-                <CardTitle className="text-2xl mb-2">{pkg.name}</CardTitle>
-                <CardDescription>{pkg.description}</CardDescription>
-                <div className="mt-4">
-                  <span className="text-3xl font-bold text-primary">{pkg.price}</span>
-                </div>
-              </CardHeader>
-
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  {pkg.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-muted-foreground">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Link to="/contact">
-                  <Button 
-                    className="w-full" 
-                    variant={pkg.popular ? "default" : "outline"}
+              <Card 
+                className={`relative hover:shadow-xl transition-shadow h-full ${
+                  pkg.popular ? 'border-primary border-2' : ''
+                }`}
+              >
+                {pkg.popular && (
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                    className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-medium"
                   >
-                    Get Quote
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
+                    Most Popular
+                  </motion.div>
+                )}
+                
+                <CardHeader className="text-center pb-4">
+                  <CardTitle className="text-2xl mb-2">{pkg.name}</CardTitle>
+                  <CardDescription>{pkg.description}</CardDescription>
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                    className="mt-4"
+                  >
+                    <span className="text-3xl font-bold text-primary">{pkg.price}</span>
+                  </motion.div>
+                </CardHeader>
+
+                <CardContent>
+                  <ul className="space-y-3 mb-6">
+                    {pkg.features.map((feature, idx) => (
+                      <motion.li 
+                        key={idx}
+                        initial={{ x: -20, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: 0.4 + idx * 0.05 }}
+                        className="flex items-start gap-2"
+                      >
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-muted-foreground">{feature}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+
+                  <Link to="/contact">
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                      <Button 
+                        className="w-full" 
+                        variant={pkg.popular ? "default" : "outline"}
+                      >
+                        Get Quote
+                      </Button>
+                    </motion.div>
+                  </Link>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
 
-        <div className="mt-16 max-w-3xl mx-auto bg-muted rounded-lg p-8 text-center">
+        <motion.div 
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16 max-w-3xl mx-auto bg-muted rounded-lg p-8 text-center"
+        >
           <h2 className="text-2xl font-bold mb-4">Need a Custom Package?</h2>
           <p className="text-muted-foreground mb-6">
             We understand that every event is unique. Our team can create a personalized package 
             tailored to your specific requirements, guest count, and budget.
           </p>
           <Link to="/contact">
-            <Button size="lg" variant="default">
-              Contact Us for Custom Quote
-            </Button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
+              <Button size="lg" variant="default">
+                Contact Us for Custom Quote
+              </Button>
+            </motion.div>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

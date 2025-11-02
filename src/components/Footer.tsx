@@ -1,72 +1,130 @@
 import { MapPin, Phone, Mail, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Footer = () => {
+  const footerRef = useRef(null);
+  const footerInView = useInView(footerRef, { once: true, margin: "-100px" });
+
   return (
-    <footer className="bg-muted border-t border-border">
+    <footer ref={footerRef} className="bg-muted border-t border-border">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={footerInView ? { y: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0 }}
+          >
             <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               shashi Caterers
             </h3>
             <p className="text-muted-foreground text-sm">
               Making your celebrations memorable with authentic South Indian cuisine and exceptional service.
             </p>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={footerInView ? { y: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link></li>
-              <li><Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About</Link></li>
-              <li><Link to="/menu" className="text-muted-foreground hover:text-primary transition-colors">Menu</Link></li>
-              <li><Link to="/packages" className="text-muted-foreground hover:text-primary transition-colors">Packages</Link></li>
+              {[
+                { to: "/", label: "Home" },
+                { to: "/about", label: "About" },
+                { to: "/menu", label: "Menu" },
+                { to: "/packages", label: "Packages" }
+              ].map((link, index) => (
+                <motion.li 
+                  key={index}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={footerInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.4, delay: 0.2 + index * 0.05 }}
+                >
+                  <Link to={link.to} className="text-muted-foreground hover:text-primary transition-colors">
+                    {link.label}
+                  </Link>
+                </motion.li>
+              ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={footerInView ? { y: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li className="text-muted-foreground">Wedding Catering</li>
-              <li className="text-muted-foreground">Corporate Events</li>
-              <li className="text-muted-foreground">Birthday Celebrations</li>
-              <li className="text-muted-foreground">Custom Packages</li>
+              {[
+                "Wedding Catering",
+                "Corporate Events",
+                "Birthday Celebrations",
+                "Custom Packages"
+              ].map((service, index) => (
+                <motion.li 
+                  key={index}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={footerInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}
+                  className="text-muted-foreground"
+                >
+                  {service}
+                </motion.li>
+              ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={footerInView ? { y: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <h4 className="font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">Shirva, Udupi, Karnataka</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-primary" />
-                <a href="tel:+919876543210" className="text-muted-foreground hover:text-primary transition-colors">
-                  +91 98765 43210
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:info@shashicaterers.com" className="text-muted-foreground hover:text-primary transition-colors">
-                  info@shashicaterers.com
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Instagram className="w-4 h-4 text-primary" />
-                <a href="https://instagram.com/shashicaterers" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                  @shashicaterers
-                </a>
-              </li>
+              {[
+                { icon: MapPin, content: "Shirva, Udupi, Karnataka" },
+                { icon: Phone, content: "+91 98765 43210", link: "tel:+919876543210" },
+                { icon: Mail, content: "info@shashicaterers.com", link: "mailto:info@shashicaterers.com" },
+                { icon: Instagram, content: "@shashicaterers", link: "https://instagram.com/shashicaterers" }
+              ].map((item, index) => (
+                <motion.li 
+                  key={index}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={footerInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.4, delay: 0.4 + index * 0.05 }}
+                  className="flex items-center gap-2"
+                >
+                  <item.icon className="w-4 h-4 text-primary flex-shrink-0" />
+                  {item.link ? (
+                    <a 
+                      href={item.link} 
+                      target={item.icon === Instagram ? "_blank" : undefined}
+                      rel={item.icon === Instagram ? "noopener noreferrer" : undefined}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {item.content}
+                    </a>
+                  ) : (
+                    <span className="text-muted-foreground">{item.content}</span>
+                  )}
+                </motion.li>
+              ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={footerInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground"
+        >
           <p>&copy; {new Date().getFullYear()} shashi Caterers. All rights reserved.</p>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );
