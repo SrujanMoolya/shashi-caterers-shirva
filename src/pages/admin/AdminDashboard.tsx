@@ -42,7 +42,7 @@ const AdminDashboard = () => {
       {/* Header */}
       <header className="bg-background border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold">Sashi Caterers Admin</h1>
+          <h1 className="text-2xl font-bold">shashi Caterers Admin</h1>
           <Button variant="outline" onClick={handleLogout}>
             <LogOut className="w-4 h-4 mr-2" />
             Logout

@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
-
+import logo from "../assets/sashi-logo.jpg"; // Ensure you have a logo image at this path
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -24,8 +24,15 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-2">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Sashi Caterers
+            {/* Logo image - place your logo at public/logo.png */}
+            <img
+              src={logo}
+              alt="Shashi Caterers"
+              className="h-16 w-auto mr-2 rounded-full"
+              loading="lazy"
+            />
+            <h1 className="text-2xl font-bold text-black bg-clip-text text-transparent">
+               SHASHI CATERERS
             </h1>
           </Link>
 

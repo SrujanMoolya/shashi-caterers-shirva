@@ -52,12 +52,12 @@ const Gallery = () => {
             Follow us on Instagram for more photos and updates from our recent events
           </p>
           <a 
-            href="https://instagram.com/sashicaterers" 
+            href="https://instagram.com/shashicaterers" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-primary hover:underline font-medium mt-2 inline-block"
           >
-            @sashicaterers
+            @shashicaterers
           </a>
         </div>
       </div>

@@ -17,7 +17,7 @@ const AdminLogin = () => {
     e.preventDefault();
     
     // Temporary demo login - will be replaced with actual authentication
-    if (email === "admin@sashicaterers.com" && password === "admin123") {
+    if (email === "admin@shashicaterers.com" && password === "admin123") {
       toast({
         title: "Login Successful",
         description: "Welcome to the admin dashboard",
@@ -53,7 +53,7 @@ const AdminLogin = () => {
               <Input
                 id="email"
                 type="email"
-                placeholder="admin@sashicaterers.com"
+                placeholder="admin@shashicaterers.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -77,7 +77,7 @@ const AdminLogin = () => {
             </Button>
 
             <p className="text-xs text-muted-foreground text-center mt-4">
-              Demo credentials: admin@sashicaterers.com / admin123
+              Demo credentials: admin@shashicaterers.com / admin123
             </p>
           </form>
         </CardContent>

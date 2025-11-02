@@ -84,8 +84,12 @@ const Contact = () => {
                   <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="font-medium">Phone</p>
-                    <a href="tel:+919876543210" className="text-sm text-muted-foreground hover:text-primary">
-                      +91 98765 43210
+                    <a href="tel:+919448128132" className="text-sm text-muted-foreground hover:text-primary">
+                      +91 9448128132
+                    </a>
+                    <br />
+                    <a href="tel:+918197968868" className="text-sm text-muted-foreground hover:text-primary">
+                      +91 8197968868
                     </a>
                   </div>
                 </div>
@@ -114,7 +118,7 @@ const Contact = () => {
             <Card>
               <CardContent className="p-0">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124223.45678!2d74.7436!3d13.3409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbca28a96ab11b9%3A0x7c2b0e0e27fc49c9!2sUdupi%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3884.101562954389!2d74.8121001!3d13.2189398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbcaf001d58209f%3A0x4e2aa0d61998ee1b!2sShashi%20Caterers!5e0!3m2!1sen!2sin!4v1762059553322!5m2!1sen!2sin"
                   width="100%"
                   height="250"
                   style={{ border: 0 }}
@@ -124,6 +128,7 @@ const Contact = () => {
                   className="rounded-lg"
                   title="shashi Caterers Location Map"
                 />
+               
               </CardContent>
             </Card>
           </div>

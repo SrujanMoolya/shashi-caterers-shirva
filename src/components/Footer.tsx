@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Sashi Caterers
+              shashi Caterers
             </h3>
             <p className="text-muted-foreground text-sm">
               Making your celebrations memorable with authentic South Indian cuisine and exceptional service.
@@ -50,14 +50,14 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:info@sashicaterers.com" className="text-muted-foreground hover:text-primary transition-colors">
-                  info@sashicaterers.com
+                <a href="mailto:info@shashicaterers.com" className="text-muted-foreground hover:text-primary transition-colors">
+                  info@shashicaterers.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Instagram className="w-4 h-4 text-primary" />
-                <a href="https://instagram.com/sashicaterers" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                  @sashicaterers
+                <a href="https://instagram.com/shashicaterers" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                  @shashicaterers
                 </a>
               </li>
             </ul>
@@ -65,7 +65,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Sashi Caterers. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} shashi Caterers. All rights reserved.</p>
         </div>
       </div>
     </footer>

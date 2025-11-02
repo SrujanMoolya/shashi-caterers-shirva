@@ -30,13 +30,13 @@ const About = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[400px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 m-14 ">
           <img
-            src="https://www.eternalweddingz.in/storage/vendor_images/tVxArZ5YoPDG9hYWTEQe2ggHOaGHbYRT6iwpM0yq.webp"
+            src="https://blog.venuelook.com/wp-content/uploads/2025/06/Working-With-Caterers.webp"
             alt="Elegant South Indian wedding buffet setup with traditional decorations"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-3xl"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/20 rounded-3xl" />
         </div>
         
         <div className="relative z-10 text-center text-white px-4">

@@ -3,6 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChefHat, Users, Star, Calendar, Utensils, Package, Quote } from "lucide-react";
 import heroImage from "@/assets/hero-catering.jpg";
+import About from "@/components/About";
+// import contact , footer , gallery, menu , packages ,testimonial
+import Contact from "@/components/Contact";
+import Gallery from "@/components/Gallery";
+import Menu from "@/components/Menu";
+import Packages from "@/components/Packages";
+import Testimonial from "@/components/Testimonials";
+import InstagramFeed from '@/components/InstaReel';
+
+
 
 const Home = () => {
   const features = [
@@ -34,7 +44,7 @@ const Home = () => {
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={heroImage}
+            src="https://5.imimg.com/data5/ANDROID/Default/2024/10/458708834/FH/SD/NX/143617138/product-jpeg-500x500.jpg"
             alt="Elegant South Indian wedding feast with traditional dishes"
             className="w-full h-full object-cover"
           />
@@ -43,7 +53,7 @@ const Home = () => {
         
         <div className="relative z-10 text-center text-white px-4 animate-fade-in">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            Sashi Caterers
+            shashi Caterers
           </h1>
           <p className="text-xl md:text-2xl mb-2 text-gold-light font-medium">
             Wedding, Corporate & Everyday Celebrations
@@ -66,12 +76,26 @@ const Home = () => {
         </div>
       </section>
 
+
+      <About/>
+      <Menu/>
+      <Packages/>
+      <Gallery/>
+      
+      <InstagramFeed/>
+      <Testimonial/>
+      <Contact/>
+
+
+
+
+
       {/* Features Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-slide-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose Sashi Caterers?
+              Why Choose shashi Caterers?
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Experience exceptional catering services that make your events unforgettable
@@ -134,155 +158,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Packages Preview Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Catering Packages
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Flexible packages designed for every occasion and budget
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {[
-              { 
-                name: "Wedding Catering", 
-                desc: "Grand feasts for your special day",
-                features: ["Custom menus", "Full service", "100+ guests"],
-                icon: Star
-              },
-              { 
-                name: "Corporate Events", 
-                desc: "Professional catering for business",
-                features: ["Timely service", "Formal setup", "50+ guests"],
-                icon: Package
-              },
-              { 
-                name: "Social Events", 
-                desc: "Perfect for parties & celebrations",
-                features: ["Flexible menu", "Quick setup", "20+ guests"],
-                icon: Users
-              }
-            ].map((pkg, index) => (
-              <Card key={index} className="border-border hover:shadow-xl transition-all hover:-translate-y-1">
-                <CardContent className="pt-6">
-                  <div className="flex justify-center mb-4">
-                    <div className="p-4 rounded-full bg-primary/10">
-                      <pkg.icon className="w-8 h-8 text-primary" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 text-center">{pkg.name}</h3>
-                  <p className="text-muted-foreground text-sm text-center mb-4">{pkg.desc}</p>
-                  <ul className="space-y-2">
-                    {pkg.features.map((feature, i) => (
-                      <li key={i} className="flex items-center text-sm">
-                        <Star className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link to="/packages">
-              <Button size="lg" variant="outline">
-                View All Packages
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-b from-muted/30 to-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              What Our Clients Say
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Trusted by families and businesses across Udupi
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {[
-              {
-                quote: "Excellent food quality and service for our wedding. Everyone loved the authentic South Indian dishes!",
-                author: "Priya & Raj",
-                event: "Wedding Ceremony"
-              },
-              {
-                quote: "Professional service and delicious food. Perfect for our corporate event. Highly recommend!",
-                author: "Suresh Kumar",
-                event: "Corporate Event"
-              },
-              {
-                quote: "Amazing experience! The team was punctual, courteous, and the food was absolutely delicious.",
-                author: "Meera Shetty",
-                event: "Family Function"
-              }
-            ].map((testimonial, index) => (
-              <Card key={index} className="border-border hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <Quote className="w-8 h-8 text-primary mb-4" />
-                  <p className="text-muted-foreground mb-4 italic">"{testimonial.quote}"</p>
-                  <div className="border-t pt-4">
-                    <p className="font-semibold">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.event}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link to="/testimonials">
-              <Button size="lg" variant="outline">
-                Read More Reviews
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery Preview Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our Work
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              A glimpse of our beautifully catered events
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="aspect-square rounded-lg bg-muted overflow-hidden hover:opacity-90 transition-opacity">
-                <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                  <Star className="w-12 h-12" />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link to="/gallery">
-              <Button size="lg" variant="default">
-                View Gallery
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary to-primary/90 text-white">
