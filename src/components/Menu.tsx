@@ -14,6 +14,7 @@ const Menu = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [expandedCategories, setExpandedCategories] = useState<{ [key: string]: boolean }>({});
+  const [showAllCategories, setShowAllCategories] = useState(false);
 
   const menuCategories = {
     juices: {
@@ -731,6 +732,7 @@ const Menu = () => {
         <div className="space-y-8 md:space-y-12">
           {Object.entries(menuCategories)
             .filter(([key]) => selectedCategory === "all" || selectedCategory === key)
+            .slice(0, showAllCategories || searchTerm || selectedCategory !== "all" ? undefined : 4)
             .map(([key, category], index) => (
               <CategorySection 
                 key={key} 
@@ -740,6 +742,50 @@ const Menu = () => {
               />
             ))}
         </div>
+
+        {/* View More Categories Button */}
+        {!showAllCategories && !searchTerm && selectedCategory === "all" && Object.entries(menuCategories).length > 4 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-center mt-8 md:mt-12"
+          >
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => setShowAllCategories(true)}
+              className="gap-2 border-2 hover:border-primary hover:bg-primary/10"
+            >
+              <ChevronDown className="w-5 h-5" />
+              View More Categories ({Object.entries(menuCategories).length - 4} more)
+            </Button>
+          </motion.div>
+        )}
+
+        {/* Show Less Categories Button */}
+        {showAllCategories && !searchTerm && selectedCategory === "all" && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-center mt-8 md:mt-12"
+          >
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => {
+                setShowAllCategories(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="gap-2 border-2 hover:border-primary hover:bg-primary/10"
+            >
+              <ChevronUp className="w-5 h-5" />
+              Show Less Categories
+            </Button>
+          </motion.div>
+        )}
 
         {/* No Results Message */}
         {searchTerm && Object.entries(menuCategories)
