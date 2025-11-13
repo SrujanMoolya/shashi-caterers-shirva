@@ -87,8 +87,8 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               {[
                 { icon: MapPin, content: "Shirva, Udupi, Karnataka" },
-                { icon: Phone, content: "+91 98765 43210", link: "tel:+919876543210" },
-                { icon: Mail, content: "info@shashicaterers.com", link: "mailto:info@shashicaterers.com" },
+                { icon: Phone, content: "+91 98765 43210", link: "tel:+918197968868" },
+                { icon: Mail, content: "info@shashicaterers.com", link: "mailto:Shashi.cateres.shirva@gmail.com" },
                 { icon: Instagram, content: "@shashicaterers", link: "https://instagram.com/shashicaterers" }
               ].map((item, index) => (
                 <motion.li 

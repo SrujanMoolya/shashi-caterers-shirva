@@ -157,9 +157,9 @@ const Navbar = () => {
       initial={{ y: 100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background border-t border-border shadow-lg"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-t border-border shadow-lg safe-area-padding-bottom"
     >
-      <div className="flex items-center justify-around px-2 py-2">
+      <div className="flex items-center justify-around px-1 sm:px-2 py-2 sm:py-2.5 max-w-screen-sm mx-auto">
         {bottomNavItems.map((item) => {
           const Icon = item.icon;
           const active = isActive(item.path);
@@ -168,27 +168,38 @@ const Navbar = () => {
             <Link
               key={item.path}
               to={item.path}
-              className="flex-1"
+              className="flex-1 max-w-[80px]"
               onClick={() => setIsOpen(false)}
             >
               <motion.div
-                whileTap={{ scale: 0.9 }}
-                className={`flex flex-col items-center justify-center py-2 px-1 rounded-lg transition-colors ${
+                whileTap={{ scale: 0.85 }}
+                className={`relative flex flex-col items-center justify-center py-1.5 sm:py-2 px-0.5 sm:px-1 rounded-xl transition-all duration-200 ${
                   active
-                    ? "text-primary"
-                    : "text-muted-foreground"
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:bg-muted/50"
                 }`}
               >
                 <motion.div
-                  animate={active ? { scale: [1, 1.2, 1] } : {}}
-                  transition={{ duration: 0.3 }}
+                  animate={active ? { 
+                    scale: [1, 1.15, 1],
+                    rotate: [0, -5, 5, 0]
+                  } : {}}
+                  transition={{ duration: 0.4 }}
+                  className="relative"
                 >
                   <Icon 
-                    size={22} 
-                    className={active ? "stroke-[2.5]" : "stroke-2"}
+                    size={20} 
+                    className={`${active ? "stroke-[2.5]" : "stroke-2"} sm:w-[22px] sm:h-[22px]`}
                   />
+                  {active && (
+                    <motion.div
+                      layoutId="activeIndicator"
+                      className="absolute -inset-1 bg-primary/20 rounded-full -z-10"
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
                 </motion.div>
-                <span className={`text-[10px] mt-1 font-medium ${
+                <span className={`text-[9px] sm:text-[10px] mt-0.5 sm:mt-1 font-medium leading-tight ${
                   active ? "text-primary" : "text-muted-foreground"
                 }`}>
                   {item.name}
@@ -196,8 +207,8 @@ const Navbar = () => {
                 {active && (
                   <motion.div
                     layoutId="bottomNavIndicator"
-                    className="absolute -top-[1px] left-0 right-0 h-[2px] bg-primary"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    className="absolute -top-[1px] left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary to-transparent rounded-full"
+                    transition={{ type: "spring", stiffness: 380, damping: 35 }}
                   />
                 )}
               </motion.div>
