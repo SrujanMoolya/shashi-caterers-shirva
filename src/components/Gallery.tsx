@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import eventphoto1 from "../assets/eventphoto1.jpeg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -17,7 +18,7 @@ const Gallery = () => {
     { id: 5, title: "Birthday Celebration", category: "Events", image: "https://www.spoonboon.com/assets/img/birthday-party-catering.jpg?auto=format&fit=crop&w=800&q=80" },
     { id: 6, title: "Dessert Table", category: "Food", image: "https://khoyamithai.com/cdn/shop/files/ODC_SMALL_BANNER_1.jpg?v=1683538197&width=520?auto=format&fit=crop&w=800&q=80" },
     { id: 7, title: "Outdoor Catering", category: "Setup", image: "https://5.imimg.com/data5/PY/DR/LS/SELLER-102373353/outdoor-catering.jpg?auto=format&fit=crop&w=800&q=80" },
-    { id: 8, title: "Special Occasion", category: "Events", image: "https://ganeshaeksanskriti.com/cdn/shop/articles/IMG_7168.jpg?v=1724407315&width=1100?auto=format&fit=crop&w=800&q=80" },
+    { id: 8, title: "Special Occasion", category: "Events", image: eventphoto1 },
     { id: 9, title: "Elegant Presentation", category: "Weddings", image: "https://dehradunweddingplanners.com/wp-content/uploads/2025/07/Exceptional-Wedding-Food.webp?auto=format&fit=crop&w=800&q=80" },
   ];
 
@@ -56,6 +57,7 @@ const Gallery = () => {
                   <img
                     src={image.image}
                     alt={image.title}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <motion.div 
