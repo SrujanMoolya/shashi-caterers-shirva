@@ -36,10 +36,10 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-background/95"
+      className="border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-background/95 w-full"
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-4 w-full max-w-full">
+        <div className="flex items-center justify-between h-20 w-full">
           <Link to="/" className="flex items-center space-x-2">
             {/* Logo image - place your logo at public/logo.png */}
             <motion.img
@@ -157,69 +157,71 @@ const Navbar = () => {
       initial={{ y: 100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-t border-border shadow-lg safe-area-padding-bottom"
+      className="md:hidden fixed bottom-4 left-4 right-4 z-50 max-w-[calc(100vw-2rem)] mx-auto"
     >
-      <div className="flex items-center justify-around px-1 sm:px-2 py-2 sm:py-2.5 max-w-screen-sm mx-auto">
-        {bottomNavItems.map((item) => {
-          const Icon = item.icon;
-          const active = isActive(item.path);
-          
-          return (
-            <Link
-              key={item.path}
-              to={item.path}
-              className="flex-1 max-w-[80px]"
-              onClick={() => setIsOpen(false)}
-            >
-              <motion.div
-                whileTap={{ scale: 0.85 }}
-                className={`relative flex flex-col items-center justify-center py-1.5 sm:py-2 px-0.5 sm:px-1 rounded-xl transition-all duration-200 ${
-                  active
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:bg-muted/50"
-                }`}
+      <div className="bg-background/95 backdrop-blur-md border border-border shadow-2xl rounded-2xl overflow-hidden w-full">
+        <div className="flex items-center justify-around px-1 sm:px-2 py-2.5 sm:py-3 max-w-screen-sm mx-auto w-full">
+          {bottomNavItems.map((item) => {
+            const Icon = item.icon;
+            const active = isActive(item.path);
+            
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                className="flex-1 max-w-[80px]"
+                onClick={() => setIsOpen(false)}
               >
                 <motion.div
-                  animate={active ? { 
-                    scale: [1, 1.15, 1],
-                    rotate: [0, -5, 5, 0]
-                  } : {}}
-                  transition={{ duration: 0.4 }}
-                  className="relative"
+                  whileTap={{ scale: 0.85 }}
+                  className={`relative flex flex-col items-center justify-center py-1.5 sm:py-2 px-0.5 sm:px-1 rounded-xl transition-all duration-200 ${
+                    active
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:bg-muted/50"
+                  }`}
                 >
-                  <Icon 
-                    size={20} 
-                    className={`${active ? "stroke-[2.5]" : "stroke-2"} sm:w-[22px] sm:h-[22px]`}
-                  />
+                  <motion.div
+                    animate={active ? { 
+                      scale: [1, 1.15, 1],
+                      rotate: [0, -5, 5, 0]
+                    } : {}}
+                    transition={{ duration: 0.4 }}
+                    className="relative"
+                  >
+                    <Icon 
+                      size={20} 
+                      className={`${active ? "stroke-[2.5]" : "stroke-2"} sm:w-[22px] sm:h-[22px]`}
+                    />
+                    {active && (
+                      <motion.div
+                        layoutId="activeIndicator"
+                        className="absolute -inset-1 bg-primary/20 rounded-full -z-10"
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
+                    )}
+                  </motion.div>
+                  <span className={`text-[9px] sm:text-[10px] mt-0.5 sm:mt-1 font-medium leading-tight ${
+                    active ? "text-primary" : "text-muted-foreground"
+                  }`}>
+                    {item.name}
+                  </span>
                   {active && (
                     <motion.div
-                      layoutId="activeIndicator"
-                      className="absolute -inset-1 bg-primary/20 rounded-full -z-10"
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      layoutId="bottomNavIndicator"
+                      className="absolute -top-[1px] left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary to-transparent rounded-full"
+                      transition={{ type: "spring", stiffness: 380, damping: 35 }}
                     />
                   )}
                 </motion.div>
-                <span className={`text-[9px] sm:text-[10px] mt-0.5 sm:mt-1 font-medium leading-tight ${
-                  active ? "text-primary" : "text-muted-foreground"
-                }`}>
-                  {item.name}
-                </span>
-                {active && (
-                  <motion.div
-                    layoutId="bottomNavIndicator"
-                    className="absolute -top-[1px] left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary to-transparent rounded-full"
-                    transition={{ type: "spring", stiffness: 380, damping: 35 }}
-                  />
-                )}
-              </motion.div>
-            </Link>
-          );
-        })}
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </motion.nav>
 
     {/* Spacer for bottom nav on mobile */}
-    <div className="md:hidden h-16" />
+    <div className="md:hidden h-20" />
     </>
   );
 };
