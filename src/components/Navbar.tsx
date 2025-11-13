@@ -36,32 +36,43 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-background/95 w-full"
+      className="border-b border-border/50 sticky top-0 z-50 backdrop-blur-lg bg-background/80 w-full shadow-sm"
     >
       <div className="container mx-auto px-4 w-full max-w-full">
         <div className="flex items-center justify-between h-20 w-full">
-          <Link to="/" className="flex items-center space-x-2">
-            {/* Logo image - place your logo at public/logo.png */}
-            <motion.img
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-              src={logo}
-              alt="Shashi Caterers"
-              className="h-16 w-auto mr-2 rounded-full"
-              loading="lazy"
-            />
-            <motion.h1 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-2xl font-bold text-black bg-clip-text "
+          <Link to="/" className="flex items-center gap-3 group">
+            {/* Logo image */}
+            <motion.div
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
+              className="relative"
             >
-               SHASHI CATERERS
-            </motion.h1>
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-amber-500/20 rounded-full blur-md group-hover:blur-lg transition-all" />
+              <img
+                src={logo}
+                alt="Shashi Caterers"
+                className="h-14 w-14 rounded-full border-2 border-orange-500/30 relative z-10 object-cover"
+                loading="lazy"
+              />
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-col"
+            >
+              <h1 className="text-xl md:text-2xl font-black tracking-tight bg-gradient-to-r from-orange-600 via-amber-600 to-orange-600 bg-clip-text text-transparent leading-tight">
+                SHASHI CATERERS
+              </h1>
+              <p className="text-[10px] md:text-xs text-muted-foreground font-medium tracking-wide">
+                Shirva, Udupi
+              </p>
+            </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center gap-2">
             {navLinks.map((link, index) => (
               <motion.div
                 key={link.path}
@@ -71,13 +82,20 @@ const Navbar = () => {
               >
                 <Link
                   to={link.path}
-                  className={`px-4 py-2 rounded-lg transition-colors ${
+                  className={`relative px-4 py-2 rounded-xl font-medium text-sm transition-all duration-200 ${
                     isActive(link.path)
-                      ? "bg-primary text-primary-foreground font-medium"
-                      : "text-foreground hover:bg-muted"
+                      ? "bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md shadow-orange-500/30"
+                      : "text-foreground hover:bg-muted/80 hover:text-orange-600"
                   }`}
                 >
                   {link.name}
+                  {isActive(link.path) && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl -z-10"
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
                 </Link>
               </motion.div>
             ))}
@@ -97,11 +115,15 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <motion.button
             whileTap={{ scale: 0.95 }}
-            className="md:hidden p-2"
+            className="md:hidden p-2 rounded-lg hover:bg-muted/80 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? (
+              <X size={24} className="text-orange-600" />
+            ) : (
+              <Menu size={24} className="text-foreground" />
+            )}
           </motion.button>
         </div>
 

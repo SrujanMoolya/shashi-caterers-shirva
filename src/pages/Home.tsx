@@ -53,7 +53,7 @@ const Home = () => {
         
         <div className="relative z-10 text-center text-white px-4 animate-fade-in">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            shashi Caterers
+            Shashi Caterers
           </h1>
           <p className="text-xl md:text-2xl mb-2 text-gold-light font-medium">
             Wedding, Corporate & Everyday Celebrations

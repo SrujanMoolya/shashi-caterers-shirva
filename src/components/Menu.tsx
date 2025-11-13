@@ -915,10 +915,10 @@ const Menu = () => {
           transition={{ duration: 0.6 }}
           className="mt-12 md:mt-16 text-center bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-950/20 dark:to-amber-950/20 rounded-2xl p-6 md:p-8 border border-orange-200 dark:border-orange-800"
         >
-          <p className="text-muted-foreground mb-3 text-sm md:text-base">
+          <p className=" mb-3 text-sm md:text-base">
             ✨ All menu items can be customized according to your preferences and dietary requirements
           </p>
-          <p className="text-xs md:text-sm text-muted-foreground/80">
+          <p className="text-xs md:text-sm text-muted-foreground">
             * Menu availability may vary based on season and location. Contact us for special requests!
           </p>
         </motion.div>
