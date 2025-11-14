@@ -144,16 +144,17 @@ const Contact = () => {
                       <p className="font-medium">{item.title}</p>
                       {item.title === "Phone" ? (
                         <div className="space-y-1">
+                          
+                          <div>
+                            <p className="text-xs text-muted-foreground">Varun Shetty`</p>`
+                            <a href="tel:+918197968868" className="text-sm text-muted-foreground hover:text-primary">
+                              +91 8197968868
+                            </a>
+                          </div>
                           <div>
                             <p className="text-xs text-muted-foreground">Ravindra Shetty</p>
                             <a href="tel:+919448128132" className="text-sm text-muted-foreground hover:text-primary">
                               +91 9448128132
-                            </a>
-                          </div>
-                          <div>
-                            <p className="text-xs text-muted-foreground">Varun Shetty</p>
-                            <a href="tel:+918197968868" className="text-sm text-muted-foreground hover:text-primary">
-                              +91 8197968868
                             </a>
                           </div>
                         </div>
