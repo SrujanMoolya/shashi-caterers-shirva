@@ -103,12 +103,13 @@ const Footer = () => {
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-primary flex-shrink-0" />
                   <div className="flex flex-col">
+                     <a href="tel:+918197968868" className="text-muted-foreground hover:text-primary transition-colors">
+                      Varun: +91 8197968868
+                    </a>
                     <a href="tel:+919448128132" className="text-muted-foreground hover:text-primary transition-colors">
                       Ravindra: +91 9448128132
                     </a>
-                    <a href="tel:+918197968868" className="text-muted-foreground hover:text-primary transition-colors">
-                      Varun: +91 8197968868
-                    </a>
+                   
                   </div>
                 </div>
               </motion.li>

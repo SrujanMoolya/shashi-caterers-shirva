@@ -127,7 +127,7 @@ const Contact = () => {
               <CardContent className="space-y-4">
                 {[
                   { icon: MapPin, title: "Address", content: "Shirva, Udupi\nKarnataka, India" },
-                  { icon: Phone, title: "Phone", content: "Ravindra Shetty: +91 9448128132\nVarun Shetty: +91 8197968868" },
+                  { icon: Phone, title: "Phone", content: "Varun Shetty: +91 8197968868\nRavindra Shetty: +91 9448128132" },
                   { icon: Mail, title: "Email", content: "shashi.caterers.shirva@gmail.com", link: "mailto:shashi.caterers.shirva@gmail.com" },
                   { icon: Clock, title: "Business Hours", content: "Mon - Sun: 9:00 AM - 8:00 PM" }
                 ].map((item, index) => (
