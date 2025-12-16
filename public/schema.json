@@ -1,0 +1,138 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://shashicaterers.com/#organization",
+      "name": "Shashi Caterers",
+      "url": "https://shashicaterers.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shashicaterers.com/assets/sashi-logo-c9uBLjDc.jpg",
+        "width": 600,
+        "height": 600
+      },
+      "image": "https://shashicaterers.com/assets/sashi-logo-c9uBLjDc.jpg",
+      "description": "Shashi Caterers - Premier catering service in Udupi, Karnataka with 29+ years of experience. Best wedding and corporate event caterers specializing in authentic South Indian cuisine.",
+      "founder": {
+        "@type": "Person",
+        "name": "K. Ravindra Shetty"
+      },
+      "foundingDate": "1996",
+      "email": "shashi.caterers.shirva@gmail.com",
+      "telephone": "+919448128132",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Shirva Village",
+        "addressLocality": "Udupi",
+        "addressRegion": "Karnataka",
+        "postalCode": "574116",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.218940,
+        "longitude": 74.812100
+      },
+      "areaServed": [
+        "Udupi",
+        "Shirva",
+        "Manipal",
+        "Kaup",
+        "Karkala",
+        "Kundapura",
+        "Mangalore",
+        "Karnataka"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/shashicaterers",
+        "https://www.facebook.com/shashi.caterers",
+        "https://www.justdial.com/Udupi/Shashi-Caterers"
+      ],
+      "knowsAbout": [
+        "Wedding Catering",
+        "Corporate Event Catering",
+        "Birthday Party Catering",
+        "Religious Function Catering",
+        "South Indian Cuisine",
+        "North Indian Cuisine",
+        "Live Food Counters",
+        "Event Management"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://shashicaterers.com/#website",
+      "url": "https://shashicaterers.com",
+      "name": "Shashi Caterers - Best Caterers in Udupi",
+      "description": "Premier wedding and corporate catering service in Udupi, Karnataka",
+      "publisher": {
+        "@id": "https://shashicaterers.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://shashicaterers.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://shashicaterers.com/#localbusiness",
+      "name": "Shashi Caterers",
+      "image": [
+        "https://shashicaterers.com/assets/sashi-logo-c9uBLjDc.jpg",
+        "https://shashicaterers.com/og-image.jpg"
+      ],
+      "@id": "https://shashicaterers.com",
+      "url": "https://shashicaterers.com",
+      "telephone": "+919448128132",
+      "email": "shashi.caterers.shirva@gmail.com",
+      "priceRange": "₹₹-₹₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Shirva Village",
+        "addressLocality": "Udupi",
+        "addressRegion": "Karnataka",
+        "postalCode": "574116",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.218940,
+        "longitude": 74.812100
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "150",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "servesCuisine": [
+        "South Indian",
+        "North Indian",
+        "Chinese",
+        "Continental"
+      ],
+      "hasMenu": {
+        "@type": "Menu",
+        "name": "Catering Menu",
+        "url": "https://shashicaterers.com/menu"
+      }
+    }
+  ]
+}

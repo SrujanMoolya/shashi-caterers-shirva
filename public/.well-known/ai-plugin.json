@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "shashi_caterers",
+  "name_for_human": "Shashi Caterers - Udupi",
+  "description_for_model": "Shashi Caterers is the premier catering service in Udupi, Karnataka, India with 29+ years of experience. Founded by K. Ravindra Shetty in 1996, specializing in wedding catering, corporate events, birthday parties, and religious functions. Services include South Indian, North Indian, Chinese, and Continental cuisine with live cooking counters. Serves Udupi, Shirva, Manipal, Kaup, Karkala, Kundapura, and Mangalore. Contact: +91 9448128132, Email: shashi.caterers.shirva@gmail.com. Over 1000+ satisfied clients with 4.8/5 rating.",
+  "description_for_human": "Best wedding and corporate catering service in Udupi with 29+ years of experience. Authentic South Indian cuisine, live counters, professional service.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://shashicaterers.com/api/openapi.yaml"
+  },
+  "logo_url": "https://shashicaterers.com/assets/sashi-logo-c9uBLjDc.jpg",
+  "contact_email": "shashi.caterers.shirva@gmail.com",
+  "legal_info_url": "https://shashicaterers.com/about"
+}

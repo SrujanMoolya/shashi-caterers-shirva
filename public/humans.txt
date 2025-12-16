@@ -1,0 +1,51 @@
+/* TEAM */
+Owner & Founder: K. Ravindra Shetty
+Business: Shashi Caterers
+Location: Shirva, Udupi, Karnataka, India
+
+/* SITE */
+Standards: HTML5, CSS3, JavaScript ES6+, React, TypeScript
+Components: React, Vite, TailwindCSS, Shadcn/ui
+Software: VS Code, Git
+
+/* SERVICES */
+Wedding Catering
+Corporate Event Catering
+Birthday Party Catering
+Religious Function Catering
+Anniversary Celebrations
+Housewarming Ceremonies
+Live Food Counters
+
+/* CUISINE */
+South Indian
+North Indian
+Chinese
+Continental
+
+/* COVERAGE AREA */
+Udupi
+Shirva
+Manipal
+Kaup
+Karkala
+Kundapura
+Mangalore
+Karnataka
+
+/* CONTACT */
+Phone: +91 9448128132
+Email: shashi.caterers.shirva@gmail.com
+Website: https://shashicaterers.com
+Instagram: @shashicaterers
+Facebook: facebook.com/shashi.caterers
+
+/* ESTABLISHED */
+Year: 1996
+Experience: 29+ Years
+Clients Served: 1000+
+Rating: 4.8/5
+
+/* THANKS */
+Thank you for choosing Shashi Caterers!
+Making your events memorable since 1996.

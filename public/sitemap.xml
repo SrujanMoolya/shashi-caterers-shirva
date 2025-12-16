@@ -5,15 +5,20 @@
   <!-- Home Page -->
   <url>
     <loc>https://shashicaterers.com/</loc>
-    <lastmod>2025-11-02</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://shashicaterers.com/og-image.jpg</image:loc>
+      <image:title>Shashi Caterers - Best Catering in Udupi</image:title>
+      <image:caption>Premier wedding and event catering service in Udupi</image:caption>
+    </image:image>
   </url>
   
   <!-- About Page -->
   <url>
     <loc>https://shashicaterers.com/about</loc>
-    <lastmod>2025-11-02</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -21,7 +26,7 @@
   <!-- Menu Page -->
   <url>
     <loc>https://shashicaterers.com/menu</loc>
-    <lastmod>2025-11-02</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -29,7 +34,7 @@
   <!-- Packages Page -->
   <url>
     <loc>https://shashicaterers.com/packages</loc>
-    <lastmod>2025-11-02</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -37,7 +42,7 @@
   <!-- Gallery Page -->
   <url>
     <loc>https://shashicaterers.com/gallery</loc>
-    <lastmod>2025-11-02</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -45,7 +50,7 @@
   <!-- Testimonials Page -->
   <url>
     <loc>https://shashicaterers.com/testimonials</loc>
-    <lastmod>2025-11-02</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -53,9 +58,6 @@
   <!-- Contact Page -->
   <url>
     <loc>https://shashicaterers.com/contact</loc>
-    <lastmod>2025-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+    <lastmod>2025-12-16</lastmod>
   
 </urlset>

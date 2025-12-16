@@ -1,23 +1,102 @@
-# Robots.txt for Shashi Caterers
+# Robots.txt for Shashi Caterers - Best Caterers in Udupi
+# Updated: 2025-12-16
+
+# Allow all search engines
 User-agent: *
 Allow: /
 Disallow: /admin
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /api/
+Crawl-delay: 1
 
-# Specific Bots
+# Google Bot
 User-agent: Googlebot
 Allow: /
+Disallow: /admin
+Crawl-delay: 0
 
-User-agent: Bingbot
+# Google Image Bot
+User-agent: Googlebot-Image
 Allow: /
 
+# Google Mobile Bot
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
+Disallow: /admin
+Crawl-delay: 0
+
+# Bing Preview
+User-agent: BingPreview
+Allow: /
+
+# DuckDuckGo Bot
+User-agent: DuckDuckBot
+Allow: /
+
+# Yandex Bot
+User-agent: Yandex
+Allow: /
+
+# Baidu Bot
+User-agent: Baiduspider
+Allow: /
+
+# Twitter Bot
 User-agent: Twitterbot
 Allow: /
 
+# Facebook Bot
 User-agent: facebookexternalhit
 Allow: /
 
-# Sitemap
+# LinkedIn Bot
+User-agent: LinkedInBot
+Allow: /
+
+# Pinterest Bot
+User-agent: Pinterestbot
+Allow: /
+
+# WhatsApp Bot
+User-agent: WhatsApp
+Allow: /
+
+# Instagram Bot
+User-agent: Instagrambot
+Allow: /
+
+# AI Search Engine Bots
+# OpenAI GPT Bot
+User-agent: GPTBot
+Allow: /
+
+# Anthropic Claude Bot
+User-agent: anthropic-ai
+Allow: /
+
+# Google Bard/Gemini
+User-agent: Google-Extended
+Allow: /
+
+# ChatGPT User
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# Sitemaps
 Sitemap: https://shashicaterers.com/sitemap.xml
 
-# Crawl Delay
-Crawl-delay: 1
+# Host
+Host: shashicaterers.com
