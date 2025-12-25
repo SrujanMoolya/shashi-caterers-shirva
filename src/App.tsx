@@ -10,12 +10,15 @@ import Packages from "./pages/Packages";
 import Gallery from "./pages/Gallery";
 import Testimonials from "./pages/Testimonials";
 import Contact from "./pages/Contact";
+import MadeBy from "./pages/MadeBy";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import WebsiteCredit from "./components/WebsiteCredit";
 import WhatsAppButton from "./components/WhatsAppButton";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +28,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           {/* Admin Routes - No Navbar/Footer */}
           <Route path="/admin" element={<AdminLogin />} />
@@ -42,9 +46,11 @@ const App = () => (
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/testimonials" element={<Testimonials />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/made-by" element={<MadeBy />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
               <Footer />
+              <WebsiteCredit />
               <WhatsAppButton />
             </>
           } />
