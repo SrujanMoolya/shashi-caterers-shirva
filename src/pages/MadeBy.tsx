@@ -47,7 +47,7 @@ const MadeBy = () => {
               <img 
                 src="https://svvaap.in/assets/logo_dark-DGRfYr3V.png" 
                 alt="SVVAAP Innovations" 
-                className="h-20 mx-auto mb-4"
+                className="h-12 mx-auto mb-4"
               />
               <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
                 21xengineers
@@ -141,12 +141,25 @@ const MadeBy = () => {
                       <ExternalLink className="w-4 h-4 ml-auto" />
                     </a>
                     <a 
-                      href="mailto:contact@21xengineers.svvaap.in" 
+                      href="mailto:workwithsvvaap@gmail.com" 
                       className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
                     >
                       <Mail className="w-5 h-5 flex-shrink-0" />
-                      <span>contact@21xengineers.svvaap.in</span>
+                      <span>workwithsvvaap@gmail.com</span>
                     </a>
+                  {/* contact - 7899535703 */}
+                    <a 
+                   
+                    href={`https://wa.me/917899535703`}
+                      className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <Phone className="w-5 h-5 flex-shrink-0" />
+                      <span>+91 7899535703</span>
+                    </a>
+                    <div className="flex items-center gap-3 text-muted-foreground">
+                      <MapPin className="w-5 h-5 flex-shrink-0" />
+                      <span>udupi , karnataka, India</span>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -167,11 +180,11 @@ const MadeBy = () => {
                       <ExternalLink className="w-4 h-4 ml-auto" />
                     </a>
                     <a 
-                      href="mailto:info@svvaap.in" 
+                      href="mailto:workwithsvvaap@gmail.com" 
                       className="flex items-center gap-3 text-muted-foreground hover:text-secondary transition-colors"
                     >
                       <Mail className="w-5 h-5 flex-shrink-0" />
-                      <span>info@svvaap.in</span>
+                      <span>workwithsvvaap@gmail.com</span>
                     </a>
                   </div>
                 </CardContent>
